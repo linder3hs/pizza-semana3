@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.linderhassinger.semana3.OrdenActivity">
+
+    <LinearLayout
+        android:id="@+id/titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title_orden"
+            android:layout_margin="12dp"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titulo">
+
+        <Spinner
+            android:id="@+id/spinnertipo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            >
+
+        </Spinner>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/tipomasa"
+        android:layout_below="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:text="@string/tipo_masa"
+            android:textStyle="bold"
+            android:layout_margin="12dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/radiomasa"
+        android:layout_below="@+id/tipomasa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:layout_margin="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/mgruesa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/masa_gruesa"/>
+            <RadioButton
+                android:id="@+id/mdelgada"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/masa_delgada"/>
+            <RadioButton
+                android:id="@+id/martesanal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/masa_artesanal"/>
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/complementos"
+        android:layout_below="@id/radiomasa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/complementos"
+            android:textStyle="bold"
+            android:layout_margin="12dp"
+            android:textSize="22dp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_margin="12dp"
+        android:id="@+id/check_complementos"
+        android:orientation="vertical"
+        android:layout_below="@id/complementos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:id="@+id/queso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/extra_queso"/>
+        <CheckBox
+            android:id="@+id/jamon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/extra_jamon"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/direccion"
+        android:layout_below="@+id/check_complementos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/direccion"
+            android:textStyle="bold"
+            android:layout_margin="12dp"
+            android:textSize="22dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/input_direccion"
+        android:layout_below="@+id/direccion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/direc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:inputType="text"
+            android:hint="@string/direccion"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@id/input_direccion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/ordenfinal"
+            android:onClick="ordenPizza"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/orden"
+            android:background="@drawable/bg_button"
+            android:layout_margin="23dp"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+    </LinearLayout>
+</RelativeLayout>
+</ScrollView>

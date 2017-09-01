@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.linderhassinger.semana3.VideoActivity">
+
+
+    <LinearLayout
+        android:id="@+id/videopizza"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <VideoView
+            android:id="@+id/video"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="16dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/videopizza"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_margin="32dp">
+
+        <Button
+            android:id="@+id/orden"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/orden"
+            android:background="@drawable/bg_button"
+            android:textColor="@color/white"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textSize="23sp"
+            android:drawableLeft="@drawable/pizza_icon_3"
+            android:layout_margin="32dp"/>
+    </LinearLayout>
+</RelativeLayout>
+</ScrollView>

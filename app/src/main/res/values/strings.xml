@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Pizza Steve</string>
+    <string name="name_company">Pizza Steve</string>
+    <string name="orden">Ordenar</string>
+    <string name="title_orden">Todo tipo de pizza</string>
+    <string name="tipo_masa">Tipo de masa</string>
+    <string name="masa_gruesa">Masa gruesa</string>
+    <string name="masa_delgada">Masa delgada</string>
+    <string name="masa_artesanal">Mada artesanal</string>
+    <string name="complementos">Complementos</string>
+    <string name="extra_queso">Extra queso mozarella</string>
+    <string name="extra_jamon">Extra jamón</string>
+    <string name="direccion">Dirección de envío</string>
+</resources>
