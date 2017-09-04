@@ -44,14 +44,6 @@ public class OrdenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_orden);
 
-
-
-
-
-
-
-
-
         spinnerTipo = (Spinner) findViewById(R.id.spinnertipo);
         ordenfinal = (Button) findViewById(R.id.ordenfinal);
         c1 = (CheckBox) findViewById(R.id.queso);
@@ -128,29 +120,6 @@ public class OrdenActivity extends AppCompatActivity {
             dire.setError("Ingrese una dirección");
         } else {
 
-            //Notificacion
-            Intent intent = new Intent(this, OrdenActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
-            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
-
-            // Notification
-            Notification notification = new NotificationCompat.Builder(this)
-                    .setContentTitle("Su pedido esta en camino")
-                    .setContentText("Gracias por su preferencia")
-                    .setSmallIcon(R.mipmap.ic_launcher_round)
-                    .setColor(ContextCompat.getColor(this, R.color.colorPrimary))
-                    .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
-                    .setContentIntent(pendingIntent)
-                    .setAutoCancel(true)
-                    .setSmallIcon(R.drawable.pizza_icon)
-                    .build();
-
-            // Notification manager
-            NotificationManager notificationManager = (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
-            notificationManager.notify(0, notification);
-
-
             //Alerta
             AlertDialog alertDialog = new AlertDialog.Builder(this).create();
             alertDialog.setTitle("Confirmación de pedido");
@@ -162,6 +131,32 @@ public class OrdenActivity extends AppCompatActivity {
                 }
             });
             alertDialog.show();
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    //Notificacion
+                    Intent intent = new Intent(OrdenActivity.this, VideoActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                    PendingIntent pendingIntent = PendingIntent.getActivity(OrdenActivity.this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
+
+                    // Notification
+                    Notification notification = new NotificationCompat.Builder(OrdenActivity.this)
+                            .setContentTitle("Su pedido esta en camino")
+                            .setContentText("Gracias por su preferencia")
+                            .setSmallIcon(R.mipmap.ic_launcher_round)
+                            .setColor(ContextCompat.getColor(OrdenActivity.this, R.color.colorPrimary))
+                            .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
+                            .setContentIntent(pendingIntent)
+                            .setAutoCancel(true)
+                            .setSmallIcon(R.drawable.pizza_icon)
+                            .build();
+
+                    // Notification manager
+                    NotificationManager notificationManager = (NotificationManager) OrdenActivity.this.getSystemService(Context.NOTIFICATION_SERVICE);
+                    notificationManager.notify(0, notification);
+                }
+            },5000);
         }
     }
 }
